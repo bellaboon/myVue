@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+    </style>
+    <title>基本代码</title>
+    <script src="../vue/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h4 class="red thin">{{msg}}</h4>
+    <h4 :style="[ta,ha]">{{msg}}</h4>
+    <h3 :style="{ha}">{{msg}}</h3>
+<!--    <h4 :class='["red","thin",{"active":flag}]'>{{msg}}</h4>-->
+<!--    <h4 :class='["red","thin",{flag}?"active":""]'>{{msg}}</h4>-->
+<!--    <input type="text" style="width:100%" v-model="msg">-->
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"hahahhahahahhaha",
+            ta:{color:'blue','font-size':'30px','font-style':'italic'},
+            ha:{'font-weight':200}
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>

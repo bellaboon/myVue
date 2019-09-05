@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .red{
+            color:red;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .thin{
+            font-weight: 200;
+        }
+        .active{
+            letter-spacing: 0.5em;
+        }
+
+    </style>
+    <title>属性绑定样式</title>
+    <script src="../vue/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h4 class="red thin">{{msg}}</h4>
+    <h4 :class="['red','thin','italic']">{{msg}}</h4>
+    <h4 :class='["red","thin",{"active":flag}]'>{{msg}}</h4>
+    <h4 :class='["red","thin",{flag}?"active":""]'>{{msg}}</h4>
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"我有一头小毛驴我从来也不骑！！！！！！！！",
+            flag:'true'
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>

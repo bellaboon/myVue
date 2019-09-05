@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+    </style>
+    <title>基本代码</title>
+    <script src="../vue/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h4 v-for="(val,key,i) in msg">第{{i}}项-----值为{{val}}----健为{{key}}</h4>
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:{
+                name:'dong',
+                sex:'female',
+                hobby:'sing'
+            }
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础代码</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script src="../vue/vue.min.js"></script>
+</head>
+<body>
+<div id="div1">
+    <span>{{gareen.name}}</span><br>
+    <span v-cloak>{{gareen.name}}</span><br>
+    <span v-text = "gareen.name"></span><br>
+    <span v-text = "gareen.hp"></span><br>
+    <span v-html = "gareen.hp"></span><br>
+    <input type="button" value="按钮" :title="gareen.name">
+</div>
+<script>
+    var gareen = {"name":"盖伦","hp":"<a>哈哈哈</a>"};
+   var vm = new Vue({
+        el: '#div1',
+        data: {
+            message: gareen
+        }
+    })
+</script>
+</body>
+</html>

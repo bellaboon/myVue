@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery.min.js"></script>
+    <script src="layer/layer.js"></script>
+</head>
+<script>
+    $(document).ready(function () {
+        $(document).on("click", "#subbut", function () {
+            layer.confirm('是否提交？', {
+                btn: ['确定', '取消']
+            }, function (ind) {
+                layler.closeAll(ind);
+                alert("确定");
+                //         console.log("父亲111"+parent);
+                //         layer.message('dialog');
+                //valiadate();
+                // window.parent.location.reload();
+                // var index = parent.layer.getFrameIndex(window.name);
+                // parent.layer.close(index);
+
+
+            }, function (inds) {
+                layler.closeAll(inds);
+                alert("取消");
+                //         layer.message('dialog');
+            });
+        })
+    })
+</script>
+<body>
+<form name="testform" action="#" >
+    <input type="button" value="提交" id="subbut"/>
+</form>
+
+</body>
+</html>

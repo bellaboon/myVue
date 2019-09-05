@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跑马灯效果</title>
+    <script src="../vue/vue.min.js"></script>
+</head>
+<body>
+
+<div id="div1">
+    <div>
+        <p>{{msg}}</p>
+    </div>
+    <button @click="lang">浪起来</button>
+    <button @click="stop">别浪</button>
+</div>
+
+<script>
+
+    var vm = new Vue({
+        el: '#div1',
+        data: {
+            msg:"猥琐发育，别浪！",
+            timer : null
+        },
+        methods:{
+            lang(){
+                if(this.timer != null)return;
+                this.timer = setInterval(()=>{
+                    var start = this.msg.substring(0,1);
+                    var end = this.msg.substring(1);
+                    this.msg = end + start;
+                },500)
+
+            },
+            stop(){
+                clearInterval(this.timer);
+                this.timer = null;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

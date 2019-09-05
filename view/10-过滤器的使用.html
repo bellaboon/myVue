@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+    </style>
+    <title>基本代码</title>
+    <script src="../vue/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <h4>{{ msg | msgFormat }}</h4>
+</div>
+</body>
+<script>
+    Vue.filter('msgFormat',function (msg) {
+        return msg.replace(/单纯/g,"邪恶")
+    })
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"曾经的我很单纯，单纯的我以为我是这个世界上最单纯的人！"
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>
